@@ -3,69 +3,79 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+// impoerting all the images from the public folder
+import Image1 from "../../../public/1.png"
+import Image2 from "../../../public/2.png"
+import Image3 from "../../../public/3.png"
+import Image4 from "../../../public/4.png"
+import Image5 from "../../../public/5.png"
+import Image6 from "../../../public/6.png"
+import Image7 from "../../../public/7.png"
+import Image8 from "../../../public/8.png"
+import Image9 from "../../../public/9.png"
 
 const items = [
   {
     color: "from-red-300 to-blue-300",
     title: "E-commerce Website",
     desc: "An amazing e-commerce website build with the reactjs framework(library)",
-    img: "/1.png",
+    img: Image1,
     link: "https://harshal-footprint24.netlify.app",
   },
   {
     color: "from-blue-300 to-violet-300",
     title: "Next.js Website landing Page",
     desc: "I have developed this webbsite landing page for my freelancing client, a website landing page with beautiful loading animations",
-    img: "/2.png",
+    img: Image2,
     link: "https://growthkar-website-nine.vercel.app",
   },
   {
     color: "from-violet-300 to-purple-300",
     title: "React.js Keep note Application",
     desc: "Developed a personal web application for storing the notes using react js",
-    img: "/3.png",
+    img: Image3,
     link: "https://custom-keep-note.netlify.app",
   },
   {
     color: "from-purple-300 to-red-300",
     title: "Memory Game",
     desc: "Created a wonderfull memory game for the entertainment and motivation amound my juniors on the event of the freshers part",
-    img: "/4.png",
+    img: Image4,
     link: "https://harshal-memory-game.netlify.app",
   },
   {
     color: "from-red-300 to-orange-300",
     title: "My old Personal Portfolio",
     desc: "This is the my first personal portfolio website which I have created when I am in my begetting to the CS industry",
-    img: "/5.png",
+    img: Image5,
     link: "https://harshal-mukte.netlify.app/",
   },
   {
     color: "from-orange-300 to-yellow-300",
     title: "Apple Airpods Product Page",
     desc: "I am very facinated by the Apple Airpods landing o=pag, so tried to copy the same scrolling animation, and here is the output below...",
-    img: "/6.png",
+    img: Image6,
     link: "https://harshal-airpods-pro.netlify.app",
   },
   {
     color: "from-yellow-300 to-green-300",
     title: "Tic-Tac-Toe ",
     desc: "The two player Tic-Tac-Toe, the web game which I have created just for fun, it has the beautiful animations and music on the top",
-    img: "/7.png",
+    img: Image7,
     link: "https://harshal-tic-tac-toe.netlify.app",
   },
   {
     color: "from-green-300 to-cyan-300",
     title: "Santa Claus Game ",
     desc: "This is the game I have developed on the occasion of the merry christmas",
-    img: "/8.png",
+    img: Image8,
     link: "https://harshal-merry-christmas.netlify.app",
   },
   {
     color: "from-cyan-300 to-blue-300",
     title: "Todo Application ",
     desc: "This is my personal and simple width some nice and smooth animations todo application",
-    img: "/9.png",
+    img: Image9,
     link: "https://harshal-todos.netlify.app",
   },
 ];
@@ -128,6 +138,7 @@ const PortfolioPage = () => {
                     src={item.img} 
                     alt="image" 
                     fill 
+                    placeholder="blur"
                     className="object-contain" 
                     sizes="(max-width: 767px) 80vw, (max-width: 1023px) 96vw, (max-width: 1279px) 500px, 600px"/>
                   </div>
@@ -141,9 +152,6 @@ const PortfolioPage = () => {
                       <span className="AncharBtnAnimation portFolioLinkBtn"></span>
                     </Link>
                   </div>
-                  {/* <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
-                  </Link> */}
                 </div>
               </div>
             ))}
