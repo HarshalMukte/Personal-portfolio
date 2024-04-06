@@ -6,7 +6,14 @@ import emailjs from "@emailjs/browser";
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false)
   const text = "Say Hello ";
+  const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID
+  const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+
+
+
 
   const form = useRef();
 
@@ -14,24 +21,28 @@ const ContactPage = () => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
+    setLoading(true)
+
 
     emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publicKey,
+      })
       .then(
         () => {
           setSuccess(true);
-          form.current.reset();
+         form.current.reset();
+         setLoading(false)
         },
-        () => {
+        (error) => {
           setError(true);
-        }
+          setLoading(false)
+          console.log('FAILED...', error.text);
+        },
       );
+      
   };
+
 
   return (
     <motion.div
@@ -73,6 +84,7 @@ const ContactPage = () => {
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
             name="user_message"
             placeholder="Enter message for me..."
+            required
           />
           <span>My mail address is:</span>
           <input
@@ -80,10 +92,11 @@ const ContactPage = () => {
             type="email"
             className="bg-transparent border-b-2 border-b-black outline-none"
             placeholder="Enter your mail"
+            required
           />
           <span>Regards</span>
-          <button className="bg-purple-200 rounded font-semibold text-gray-600 p-2 sm:p-4">
-            Send
+          <button value="Send" className="bg-purple-200 rounded font-semibold text-gray-600 p-2 sm:p-4">
+            { loading ? "Sending..." : "Send" }
           </button>
           {success && (
             <span className="text-green-600 font-semibold">
@@ -92,7 +105,7 @@ const ContactPage = () => {
           )}
           {error && (
             <span className="text-red-600 font-semibold">
-              Something went wrong!
+              Something went wrong! Try again later...
             </span>
           )}
         </form>

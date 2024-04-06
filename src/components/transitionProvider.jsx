@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
+  console.log(pathName.substring(1).toUpperCase());
 
   return (
     <AnimatePresence mode="wait">
