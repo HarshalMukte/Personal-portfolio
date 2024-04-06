@@ -21,7 +21,7 @@ const Homepage = () => {
           </h1>
           {/* DESC */}
           <p className="md:text-xl">
-            Hi I'm Harshal Mukte. A passinate Front End <br /> Developer based in the India
+            Hi I&apos;m Harshal Mukte. A passinate Front End <br /> Developer based in the India
           </p>
           {/* BUTTONS */}
           <div className="w-full">
@@ -46,7 +46,7 @@ const Homepage = () => {
          {/* IMAGE CONTAINER */}
          <div className="h-1/2 lg:h-full lg:w-1/2 relative flex items-end justify-center">
           <div className="h-5/6 relative w-full">
-            <Image src="/hero1.png" sizes="100vw" alt="hero Image" fill className="object-contain drop-shadow-2xl heroImage" />
+            <Image src="/hero1.png" sizes="(max-width: 1023px) 100vw, 50vw" alt="hero Image" fill className="object-contain drop-shadow-2xl heroImage" />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 import CvDownloadBtn from "@/components/CvDownloadBtn";
 import Brain from "@/components/brain";
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -54,18 +54,18 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {/* BIOGRAPHY DESC */}
             <p className="text-lg text-justify">
-            Hi there, <span className="italic font-bold">I'm Harshal Mukte</span>, and I'm on a mission to create extraordinary user experiences as a front-end developer.
+            Hi there, <span className="italic font-bold">I&apos;m Harshal Mukte</span>, and I&apos;m on a mission to create extraordinary user experiences as a front-end developer.
             </p>
             <p className="text-lg text-justify">
-              Always at the forefront of web development, I continuously explore the latest technologies and methodologies, from cutting-edge frameworks to the finer details of HTML, CSS, and JavaScript. My ultimate aim? To deliver exceptional solutions that go above and beyond my clients' expectations.
+              Always at the forefront of web development, I continuously explore the latest technologies and methodologies, from cutting-edge frameworks to the finer details of HTML, CSS, and JavaScript. My ultimate aim? To deliver exceptional solutions that go above and beyond my client&apos;s expectations.
             </p>
             <p className="italic">
-              Let's work together to create something extraordinary!
+              Let&apos;s work together to create something extraordinary!
             </p>
              {/* BUTTONS */}
           <div className="w-full flex gap-4">
             <Link href="/contact" className="p-4 font-bold">
-              Let's collaborate →
+              Let&apos;s collaborate →
               <span className="AncharBtnAnimation"></span>
             </Link>
           </div>
