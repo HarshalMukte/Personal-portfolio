@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import HeroImage from "../../../public/hero1.png"
 
 const Homepage = () => {
   return (
@@ -46,7 +47,7 @@ const Homepage = () => {
          {/* IMAGE CONTAINER */}
          <div className="h-1/2 lg:h-full lg:w-1/2 relative flex items-end justify-center">
           <div className="h-5/6 relative w-full">
-            <Image src="/hero1.png" sizes="(max-width: 1023px) 100vw, 50vw" alt="hero Image" fill className="object-contain drop-shadow-2xl heroImage" />
+            <Image src={HeroImage} placeholder="blur" sizes="(max-width: 1023px) 100vw, 50vw" alt="hero Image" fill className="object-contain drop-shadow-2xl heroImage" />
           </div>
         </div>
       </div>
