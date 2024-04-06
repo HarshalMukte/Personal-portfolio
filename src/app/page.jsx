@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import HeroImage from "../../../public/hero1.png"
+import HeroImage from "../../public/hero1.png"
 
 const Homepage = () => {
   return (
